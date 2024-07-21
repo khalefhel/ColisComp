@@ -1,0 +1,182 @@
+/* Importation des polices */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/* Variables CSS pour les couleurs */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #343a40;
+  --input-background: #fff;
+  --input-border: #ced4da;
+  --input-focus-border: #80bdff;
+  --button-background: #007bff;
+  --button-hover-background: #0056b3;
+  --button-text: #fff;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-y: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  background-color: var(--input-background);
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border-radius: var(--border-radius);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Form styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  font-weight: 500;
+  margin-bottom: 5px;
+  display: block;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--input-border);
+  border-radius: var(--border-radius);
+  font-size: 14px;
+  background-color: var(--input-background);
+  transition: border-color var(--transition-speed);
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+  border-color: var(--input-focus-border);
+  outline: none;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 100px;
+}
+
+button {
+  background-color: var(--button-background);
+  color: var(--button-text);
+  padding: 10px 20px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  width: auto; /* Adjusted to prevent full width */
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+button:hover {
+  background-color: var(--button-hover-background);
+}
+
+/* Alert styles */
+.alert {
+  padding: 15px;
+  margin-bottom: 20px;
+  border: 1px solid transparent;
+  border-radius: var(--border-radius);
+}
+
+.alert-warning {
+  color: #856404;
+  background-color: #fff3cd;
+  border-color: #ffeeba;
+}
+
+.alert-danger {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+
+.alert-success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
+}
+
+/* Message container */
+.message-container {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 20px;
+  border: 1px solid #f5c6cb;
+  border-radius: var(--border-radius);
+  text-align: center;
+  margin: 20px auto;
+  max-width: 600px;
+}
+
+.message {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.message-link {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-color);
+  color: var(--button-text);
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  transition: background-color var(--transition-speed);
+}
+
+.message-link:hover {
+  background-color: var(--button-hover-background);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  button {
+    font-size: 14px;
+  }
+}

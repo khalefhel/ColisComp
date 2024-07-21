@@ -1,0 +1,122 @@
+/* Importation des polices */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+/* Variables CSS pour les couleurs */
+:root {
+  --primary-color: #007bff;
+  --secondary-color: #6c757d;
+  --background-color: #f8f9fa;
+  --text-color: #343a40;
+  --input-background: #fff;
+  --input-border: #ced4da;
+  --input-focus-border: #80bdff;
+  --button-background: #007bff;
+  --button-hover-background: #0056b3;
+  --button-text: #fff;
+  --border-radius: 8px;
+  --transition-speed: 0.3s;
+  --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Global styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-y: auto;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: var(--input-background);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+
+/* Notification styles */
+.notification {
+  background-color: var(--input-background);
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid var(--input-border);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+}
+
+.notification-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.notification-title {
+  font-size: 18px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.notification-text {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--button-background);
+  color: var(--button-text);
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  transition: background-color var(--transition-speed);
+  text-align: center;
+}
+
+.button:hover {
+  background-color: var(--button-hover-background);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+
+  .notification {
+    padding: 15px;
+  }
+
+  .notification-title {
+    font-size: 16px;
+  }
+
+  .notification-text {
+    font-size: 12px;
+  }
+
+  .button {
+    width: 100%;
+    text-align: center;
+  }
+}

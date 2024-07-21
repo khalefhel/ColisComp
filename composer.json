@@ -1,0 +1,6 @@
+{
+    "require": {
+        "stripe/stripe-php": "^14.8",
+        "cboden/ratchet": "^0.4.4"
+    }
+}

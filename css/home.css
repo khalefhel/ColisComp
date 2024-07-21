@@ -1,0 +1,652 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+:root {
+  --font-size-base: 16px;
+  --font-family-base: "Open Sans", sans-serif;
+  --font-weight-light: 300;
+  --color-primary-blue: #007bff; /* Bleu */
+  --color-primary-orange: #ff5733; /* Orange */
+  --color-primary: var(
+    --color-primary-blue
+  ); /* Choisissez ici la couleur primaire à utiliser */
+  --color-primary-dark: #0056b3; /* Bleu foncé, à adapter si vous utilisez l'orange */
+  --color-secondary: #333;
+  --color-background: #fff;
+  --color-white: #fff;
+  --color-black: #000;
+  --transition-base: 0.3s ease;
+  --box-shadow-base: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+body {
+  background: linear-gradient(90deg, #e6ab53, #4c76c2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+a {
+  list-style: none;
+  text-decoration: none;
+}
+
+.logo {
+  color: #e6ab53;
+  font-size: 3em;
+  margin-left: -40px;
+}
+
+.logo span {
+  color: #4c76c2;
+}
+
+.menu-bar {
+  background-color: #fff;
+  height: 80px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 5%;
+  position: relative;
+}
+
+.menu-bar ul {
+  list-style: none;
+  display: flex;
+}
+
+.menu-bar ul li {
+  /* width: 120px; */
+  padding: 10px 30px;
+  /* text-align: center; */
+
+  position: relative;
+}
+
+.menu-bar ul li a {
+  font-size: 18px;
+  color: #4c76c2;
+  text-decoration: none;
+
+  transition: all 0.3s;
+}
+
+.menu-bar ul li a:hover {
+  color: #e6ab53;
+}
+
+.fas {
+  float: right;
+  margin-left: 10px;
+  padding-top: 3px;
+}
+
+/* dropdown menu style */
+.dropdown-menu {
+  display: none;
+}
+
+.menu-bar ul li:hover .dropdown-menu {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background-color: #fff;
+}
+
+.menu-bar ul li:hover .dropdown-menu ul {
+  display: block;
+  margin: 10px;
+}
+
+.menu-bar ul li:hover .dropdown-menu ul li {
+  width: 200px;
+  padding: 10px;
+}
+
+.menu-bar ul li:hover .dropdown-menu ul li a {
+  font-size: 15px;
+}
+
+.notification-count {
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+html {
+  font-size: var(--font-size-base);
+}
+
+body {
+  font-family: var(--font-family-base);
+  font-weight: var(--font-weight-light);
+}
+
+.main-heading {
+  z-index: 2;
+  color: var(--color-white);
+  font-size: 3em;
+  letter-spacing: 9px;
+  margin-top: -50px; /* Déplacer le titre plus haut */
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Ombre portée */
+  background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+  padding: 10px 20px;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  width: 100%;
+  max-width: 600px;
+  margin-top: 5%;
+}
+
+.search-input {
+  padding: 10px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  flex: 1;
+}
+
+.search-button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  cursor: pointer;
+  transition: background-color var(--transition-base);
+}
+
+.search-button:hover,
+.search-button:focus {
+  background-color: var(--color-primary-dark);
+}
+
+/* Base styles for paragraphs */
+
+/* Center alignment for specific section paragraphs */
+
+/* Underline for links in the about section */
+.sec-about a {
+  text-decoration: underline;
+}
+
+/* Styles for the about section */
+.sec-about {
+  padding: 3em 0; /* Adds some padding for spacing */
+  background-color: #f9f9f9; /* Light background color for distinction */
+}
+
+.sec-about h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.sec-about hr {
+  width: 30%;
+  margin: 0 auto 2em;
+  border: 0;
+  border-top: 2px solid #007bff; /* Orange color for the horizontal rule */
+}
+
+.sec-about .container {
+  margin: 0 auto;
+  padding: 0 1em; /* Padding for responsive design */
+}
+
+.sec-about .row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sec-about p {
+  line-height: 1.8; /* Increased line height for easier reading */
+  text-align: center; /* Center alignment for the text */
+  max-width: 100%; /* Max width to control line length */
+  margin: 20px auto; /* Margin for centering and spacing */
+  margin-left: 20%;
+}
+
+.sec-about .col-sm-6 {
+  width: 100%; /* Ensure full width for smaller screens */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .sec-about .row {
+    flex-direction: row; /* Change to row layout for larger screens */
+  }
+
+  .sec-about .col-sm-6 {
+    width: 50%; /* Set to half width for larger screens */
+  }
+
+  .sec-about .col-sm-offset-3 {
+    margin-left: 20%; /* Center alignment for larger screens */
+  }
+}
+
+/* Services section styling */
+.sec-services {
+  padding: 3em 0; /* Add some padding for spacing */
+  background-color: #fff; /* White background for contrast */
+}
+
+.sec-services h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.sec-services hr {
+  width: 30%;
+  margin: 0 auto 2em;
+  border: 0;
+  border-top: 2px solid #ff5733;
+}
+
+.sec-services .container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 1em; /* Padding for responsive design */
+}
+
+.sec-services .row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center; /* Center align all text within services */
+}
+
+.sec-services .col-sm-4 {
+  margin-bottom: 2em; /* Add some space below each service */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Align items in the center in the column */
+}
+
+.sec-services .icon {
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 1em; /* Space between icon and title */
+}
+
+.service-fiable h2,
+.service-rapide h2,
+.service-abordable h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em; /* Space below each title */
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .sec-services .col-sm-4 {
+    width: 33.3333%; /* Each takes up one third of the container on larger screens */
+  }
+}
+
+/* Common section styles */
+/* Specific styles for .sec-how-it-works */
+/* Center alignment for specific section paragraphs */
+
+/* Underline for links in the about section */
+.sec-how-it-works a {
+  text-decoration: underline;
+}
+
+/* Styles for the about section */
+.sec-how-it-works {
+  padding: 3em 0; /* Add some padding for spacing */
+  background-color: #f9f9f9; /* Light background color for distinction */
+}
+
+.sec-how-it-works h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 0.5em;
+}
+
+.sec-how-it-works hr {
+  width: 50%;
+  margin: 0 auto 2em;
+  border: 0;
+  border-top: 2px solid #007bff;
+}
+
+.sec-how-it-works .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 1em; /* Padding for responsive design */
+}
+
+.sec-how-it-works .row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.sec-how-it-works p {
+  line-height: 1.8; /* Increased line height for easier reading */
+  text-align: center; /* Center alignment for the text */
+  max-width: 100%; /* Max width to control line length */
+  margin: 20px auto; /* Margin for centering and spacing */
+}
+
+.sec-how-it-works .col-sm-6 {
+  width: 100%; /* Ensure full width for smaller screens */
+}
+
+/* Responsive adjustments for services */
+@media (min-width: 768px) {
+  .sec-how-it-works .col-sm-4 {
+    width: 33.3333%; /* Each takes up one third of the container on larger screens */
+  }
+}
+
+/* Styles pour la section de statistiques */
+.sec-stats {
+  padding: 60px 0;
+  background-color: #fff;
+  text-align: center;
+}
+
+.sec-stats h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.sec-stats hr {
+  width: 40%;
+  margin: 0 auto 2em;
+  border: 0;
+  border-top: 2px solid #ff5733; /* Orange color for the horizontal rule */
+}
+
+.sec-stats .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sec-stats .row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.sec-stats .stat-item {
+  margin: 20px 0;
+}
+
+.sec-stats .stat-item i {
+  font-size: 50px;
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.sec-stats .stat-item h3 {
+  font-size: 28px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.sec-stats .stat-item p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Styles pour petits écrans */
+@media (max-width: 576px) {
+  .sec-stats .row {
+    flex-direction: column;
+  }
+}
+
+/* Styles pour la section FAQ */
+.sec-faq {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.sec-faq h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 20px;
+  margin-left: 45%;
+}
+
+.sec-faq hr {
+  width: 30%;
+  margin: 0 auto 2em;
+  border: 0;
+  border-top: 2px solid #007bff; /* Orange color for the horizontal rule */
+}
+
+.sec-faq .container {
+  max-width: 50%;
+  margin: 0 auto;
+  text-align: left;
+  height: auto;
+}
+
+.sec-faq .faq-item {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.sec-faq .faq-question {
+  padding: 15px 20px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+}
+.sec-faq .faq-item:nth-child(odd) .faq-question {
+  background-color: #007bff; /* Couleur de fond pour les questions impaires */
+}
+
+.sec-faq .faq-item:nth-child(even) .faq-question {
+  background-color: #ff6f61; /* Couleur de fond pour les questions paires */
+}
+
+.sec-faq .faq-arrow {
+  font-size: 24px;
+  transition: transform 0.3s;
+}
+
+.sec-faq .faq-answer {
+  padding: 15px 20px;
+  display: none;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.sec-faq .faq-question.active .faq-arrow {
+  transform: rotate(180deg);
+}
+
+/* Styles pour petits écrans */
+@media (max-width: 576px) {
+  .sec-faq .faq-question {
+    font-size: 16px;
+  }
+}
+
+/* Contact */
+/* Styles modernes pour la section de contact */
+.sec-contact {
+  padding: 60px 0;
+  background-color: #f1f1f1;
+}
+
+.sec-contact h1 {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.sec-contact hr {
+  width: 40%;
+  margin: 0 auto 2em;
+  border: 0;
+  border-top: 2px solid #ff5733; /* Orange color for the horizontal rule */
+}
+
+.sec-contact .container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.sec-contact .row {
+  display: flex;
+  justify-content: center;
+}
+
+.sec-contact .form-group {
+  margin-bottom: 20px;
+}
+
+.sec-contact .form-control {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.sec-contact .form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.2);
+}
+
+.sec-contact .btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+
+.sec-contact .btn:hover {
+  background-color: #0056b3;
+  transform: scale(1.05);
+}
+
+.sec-contact .btn:active {
+  background-color: #004494;
+  transform: scale(1);
+}
+
+/* Styles pour petits écrans */
+@media (max-width: 576px) {
+  .sec-contact .col-sm-4.col-sm-offset-4 {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+/* Centrage horizontal et ajustements pour petits écrans */
+@media (max-width: 767px) {
+  .sec-contact .col-sm-4.col-sm-offset-4 {
+    float: none;
+    margin: 0 auto;
+  }
+}
+
+/* Footer */
+/* Footer */
+#footer {
+  padding: 3em 0;
+  background-color: #b9ccdf; /* Couleur de fond pour le footer */
+  color: #fff; /* Couleur du texte */
+  text-align: center;
+}
+
+#footer p {
+  margin-bottom: 1em;
+}
+
+.soc-media-ul {
+  display: flex;
+  justify-content: center;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.soc-media-ul li:not(:first-child) a {
+  margin-left: 1em;
+}
+
+.soc-media-ul a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  font-size: 1.5rem;
+  color: #fff;
+  background-color: #007bff;
+  border-radius: 50%;
+  text-decoration: none; /* Supprimer le soulignement du lien */
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.soc-media-ul a:hover,
+.soc-media-ul a:focus {
+  background-color: #0056b3; /* Couleur de fond au survol */
+}
+
+/* Styles pour les icônes de médias sociaux */
+.soc-media-ul .fa {
+  line-height: 1; /* Ajuster la ligne pour les icônes */
+}
+
+/* Base */
+section {
+  padding: 5em 0;
+}
+
+form {
+  max-width: 100%;
+}
+
+hr {
+  margin-bottom: 3em;
+  width: 7%;
+  border-color: var(--color-primary);
+}
